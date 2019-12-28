@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class Acc
+{
+private double bal;
+public Acc(double x)
+{
+if(x>0.0)
+   bal=x;
+}
+public void credit(double y)
+{
+if(y>bal)
+   System.out.println("Debit amount Exceeded account balance");
+else
+  bal=bal-y;
+   System.out.println("Remaining account balance::" +bal);
+}
+public double getBal()
+{
+return bal;
+}
+}
+public class AccTest
+{
+public static void main(String[] args)
+{
+Acc a1=new Acc(5000);
+System.out.println("Amount in the account...");
+System.out.println(a1.getBal());
+System.out.println("enter amount to be debit...");
+Scanner ip=new Scanner(System.in);
+int a=ip.nextInt();
+a1.credit(a);
+}
+}
